@@ -18,7 +18,10 @@ public final class TerraWrathFabric implements ModInitializer {
     public void onInitialize() {
         TWRegistry.bootstrap();
         // Fabric API (if present) paginates modded creative tabs; otherwise we skip the tab to avoid position clashes
-        boolean tabsSupported = FabricLoader.getInstance().isModLoaded("fabric-item-group-api-v1");
+        // (the module was renamed to fabric-creative-tab-api-v1 in the Mojang-named Fabric API)
+        FabricLoader loader = FabricLoader.getInstance();
+        boolean tabsSupported = loader.isModLoaded("fabric-creative-tab-api-v1") || loader.isModLoaded("fabric-item-group-api-v1")
+            || loader.isModLoaded("fabric-api");
         TWRegistry.tabBuilder = () -> CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0);
         for (TWRegistry.Entry<?> entry : TWRegistry.ENTRIES) {
             if (entry.registry() == Registries.CREATIVE_MODE_TAB && !tabsSupported) {

@@ -84,7 +84,7 @@ def main():
     os.makedirs(mods, exist_ok=True)
     for f in os.listdir(mods):
         os.remove(os.path.join(mods, f))
-    shutil.copy(os.path.join(PROJ, "build", "libs", "terrawrath-1.1.0.jar"), mods)
+    shutil.copy(os.path.join(PROJ, "build", "libs", "terrawrath-1.1.1.jar"), mods)
     if with_api:
         api = fetch("https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.164.0+26.3/fabric-api-0.164.0+26.3.jar",
                     os.path.join(LIBDIR, "fabric-api-0.164.0+26.3.jar"))

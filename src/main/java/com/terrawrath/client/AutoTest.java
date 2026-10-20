@@ -73,6 +73,44 @@ public final class AutoTest {
         return new Scenario(t, pitch, stop, list);
     }
 
+    private static boolean creativeMode() {
+        return PROP.equalsIgnoreCase("creative");
+    }
+
+    private static void tickCreative(Minecraft mc) {
+        scenarioTick++;
+        if (scenarioTick == 20) {
+            var screen = new net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen(mc.player,
+                mc.player.connection.enabledFeatures(), true);
+            mc.gui.setScreen(screen);
+        }
+        if (scenarioTick == 40 && mc.gui.screen() instanceof net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen screen) {
+            try {
+                net.minecraft.world.item.CreativeModeTab tab = com.terrawrath.registry.TWRegistry.TAB.get();
+                java.lang.reflect.Method m;
+                try {
+                    m = screen.getClass().getMethod("setSelectedTab", net.minecraft.world.item.CreativeModeTab.class); // Fabric API paging
+                } catch (NoSuchMethodException e) {
+                    m = screen.getClass().getDeclaredMethod("selectTab", net.minecraft.world.item.CreativeModeTab.class);
+                }
+                m.setAccessible(true);
+                m.invoke(screen, tab);
+                TerraWrath.LOG.info("[AutoTest] creative: selected TerraWrath tab, items {}", tab.getDisplayItems().stream()
+                    .map(st -> st.getItem().toString()).toList());
+            } catch (Throwable t) {
+                TerraWrath.LOG.error("[AutoTest] creative: no TerraWrath tab: {}", t.toString());
+            }
+        }
+        if (scenarioTick == 70) {
+            Screenshot.grab(mc.gameDirectory, "tw_creative_tab.png", mc.gameRenderer.mainRenderTarget(), 1, msg -> {});
+            TerraWrath.LOG.info("[AutoTest] captured tw_creative_tab.png");
+        }
+        if (scenarioTick == 90) {
+            state = 3;
+            mc.stop();
+        }
+    }
+
     private static boolean naturalMode() {
         return PROP.equalsIgnoreCase("natural");
     }
@@ -207,6 +245,10 @@ public final class AutoTest {
         }
         if (naturalMode()) {
             tickNatural(mc);
+            return;
+        }
+        if (creativeMode()) {
+            tickCreative(mc);
             return;
         }
         if (mc.gui.screen() != null && !(mc.gui.screen() instanceof com.terrawrath.client.gui.ControlPanelScreen) && !(mc.gui.screen() instanceof net.minecraft.client.gui.screens.ChatScreen)) {

@@ -15,7 +15,7 @@ One jar works on both **Fabric** and **Forge**, and it works with **shader packs
 | Fabric | Minecraft 26.3, Fabric Loader 0.19+, **Fabric API** (needed for the TerraWrath creative tab) |
 | Forge  | Minecraft 26.3, Forge 66.x |
 
-1. Download `terrawrath-1.1.0.jar` from the Releases page.
+1. Download `terrawrath-1.1.1.jar` from the Releases page.
 2. Put it in your instance's `mods` folder.
 3. Optional: add **Sodium + Iris** and any shader pack. TerraWrath registers its effects with Iris automatically.
 
@@ -23,7 +23,7 @@ Java 25 is required, as for Minecraft 26.3 itself.
 
 ## How to play
 
-- **Disaster Control Panel**: in the **TerraWrath** creative tab, or craft it in survival. Right-click it to open
+- **Disaster Control Panel**: in the **TerraWrath** creative tab (on Fabric it is on the second page: use the arrows at the top right of the creative inventory), or craft it in survival. Right-click it to open
   the panel: pick a disaster, set the intensity, choose *spawn in front of me* or *nearby*, use Random or
   Stop All, or start the **Cinematic Cam** (wide drone orbit; sneak to exit, optional letterbox).
 - **Disaster Detector**: in the same tab, or craft it. While it's in your inventory a HUD readout shows the

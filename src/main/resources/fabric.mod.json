@@ -8,7 +8,7 @@
     "TerraWrath"
   ],
   "license": "MIT",
-  "icon": "terrawrath_logo.png",
+  "icon": "assets/terrawrath/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -25,9 +25,7 @@
   "depends": {
     "fabricloader": ">=0.19.0",
     "minecraft": "~26.3",
-    "java": ">=25"
-  },
-  "recommends": {
+    "java": ">=25",
     "fabric-api": "*"
   }
 }
