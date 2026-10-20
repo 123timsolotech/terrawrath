@@ -1,0 +1,84 @@
+// TerraWrath — built with ForgeGradle 7 for Forge 26.3.
+// The same jar also carries a Fabric entrypoint (fabric.mod.json); Fabric classes are compile-only here.
+
+plugins {
+    id 'java'
+    id 'idea'
+    id 'eclipse'
+    id 'net.minecraftforge.gradle' version '[7.0.17,8)'
+}
+
+version = '1.1.0'
+group = 'com.terrawrath'
+base.archivesName = 'terrawrath'
+
+// Mojang ships Java 25 to end users in 26.1+, so the mod targets Java 25.
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+minecraft {
+    runs {
+        configureEach {
+            workingDir = layout.projectDirectory.dir('run')
+            systemProperty 'eventbus.api.strictRuntimeChecks', 'true'
+            args '--mixin.config', 'terrawrath.mixins.json'
+        }
+
+        register('client') {
+            args '--width', '1280', '--height', '720'
+            if (project.hasProperty('autotest')) {
+                jvmArgs "-Dterrawrath.autotest=${project.property('autotest')}"
+                jvmArgs "-Dterrawrath.autotest.night=${project.findProperty('night') ?: 'false'}"
+                jvmArgs "-Dterrawrath.autotest.intensity=${project.findProperty('intensity') ?: '1.0'}"
+            }
+        }
+
+        register('server') {
+            args '--nogui'
+        }
+    }
+}
+
+repositories {
+    minecraft.mavenizer(it)
+    maven fg.forgeMaven
+    maven fg.minecraftLibsMaven
+    maven {
+        name = 'Fabric'
+        url = 'https://maven.fabricmc.net/'
+        content { includeGroup 'net.fabricmc' }
+    }
+    mavenCentral()
+}
+
+dependencies {
+    implementation minecraft.dependency('net.minecraftforge:forge:26.3-66.0.13')
+    annotationProcessor 'net.minecraftforge:eventbus-validator:7.0.6'
+    // Fabric entrypoint interfaces + Mixin annotations (provided at runtime by either loader)
+    compileOnly 'net.fabricmc:fabric-loader:0.19.5'
+    compileOnly 'net.fabricmc:sponge-mixin:0.17.4+mixin.0.8.7'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.named('jar', Jar) {
+    manifest {
+        attributes(
+            'MixinConfigs': 'terrawrath.mixins.json',
+            'Implementation-Title': 'TerraWrath',
+            'Implementation-Version': project.version
+        )
+    }
+    from('LICENSE') {
+        rename { 'LICENSE_terrawrath' }
+    }
+}
+
+tasks.named('processResources', ProcessResources) {
+    def props = [version: project.version]
+    inputs.properties props
+    filesMatching(['fabric.mod.json']) {
+        expand props
+    }
+}

@@ -1,0 +1,241 @@
+{
+  "wind_loop": {
+    "sounds": [
+      {
+        "name": "terrawrath:wind_loop",
+        "attenuation_distance": 64,
+        "stream": true
+      }
+    ],
+    "subtitle": "subtitles.terrawrath.wind"
+  },
+  "rumble_loop": {
+    "sounds": [
+      {
+        "name": "terrawrath:rumble_loop",
+        "attenuation_distance": 64,
+        "stream": true
+      }
+    ],
+    "subtitle": "subtitles.terrawrath.rumble"
+  },
+  "blizzard_loop": {
+    "sounds": [
+      {
+        "name": "terrawrath:blizzard_loop",
+        "attenuation_distance": 64,
+        "stream": true
+      }
+    ],
+    "subtitle": "subtitles.terrawrath.blizzard"
+  },
+  "storm_loop": {
+    "sounds": [
+      {
+        "name": "terrawrath:storm_loop",
+        "attenuation_distance": 64,
+        "stream": true
+      }
+    ],
+    "subtitle": "subtitles.terrawrath.storm"
+  },
+  "wave_roar_loop": {
+    "sounds": [
+      {
+        "name": "terrawrath:wave_roar_loop",
+        "attenuation_distance": 64,
+        "stream": true
+      }
+    ],
+    "subtitle": "subtitles.terrawrath.wave"
+  },
+  "lava_loop": {
+    "sounds": [
+      {
+        "name": "terrawrath:lava_loop",
+        "attenuation_distance": 64,
+        "stream": true
+      }
+    ],
+    "subtitle": "subtitles.terrawrath.lava"
+  },
+  "hole_loop": {
+    "sounds": [
+      {
+        "name": "terrawrath:hole_loop",
+        "attenuation_distance": 64,
+        "stream": true
+      }
+    ],
+    "subtitle": "subtitles.terrawrath.hole"
+  },
+  "siren": {
+    "sounds": [
+      {
+        "name": "terrawrath:siren",
+        "attenuation_distance": 48,
+        "stream": false
+      }
+    ],
+    "subtitle": "subtitles.terrawrath.siren"
+  },
+  "warning": {
+    "sounds": [
+      {
+        "name": "terrawrath:warning",
+        "attenuation_distance": 48,
+        "stream": false
+      }
+    ],
+    "subtitle": "subtitles.terrawrath.warning"
+  },
+  "meteor_whistle": {
+    "sounds": [
+      {
+        "name": "terrawrath:meteor_whistle",
+        "attenuation_distance": 140,
+        "stream": false
+      }
+    ],
+    "subtitle": "subtitles.terrawrath.meteor"
+  },
+  "eruption": {
+    "sounds": [
+      {
+        "name": "terrawrath:eruption",
+        "attenuation_distance": 260,
+        "stream": false
+      }
+    ],
+    "subtitle": "subtitles.terrawrath.eruption"
+  },
+  "wave_crash": {
+    "sounds": [
+      {
+        "name": "terrawrath:wave_crash",
+        "attenuation_distance": 220,
+        "stream": false
+      }
+    ],
+    "subtitle": "subtitles.terrawrath.wave_crash"
+  },
+  "collapse": {
+    "sounds": [
+      {
+        "name": "terrawrath:collapse",
+        "attenuation_distance": 120,
+        "stream": false
+      }
+    ],
+    "subtitle": "subtitles.terrawrath.collapse"
+  },
+  "supernova": {
+    "sounds": [
+      {
+        "name": "terrawrath:supernova",
+        "attenuation_distance": 400,
+        "stream": false
+      }
+    ],
+    "subtitle": "subtitles.terrawrath.supernova"
+  },
+  "shockwave": {
+    "sounds": [
+      {
+        "name": "terrawrath:shockwave",
+        "attenuation_distance": 300,
+        "stream": false
+      }
+    ],
+    "subtitle": "subtitles.terrawrath.shockwave"
+  },
+  "ice_burst": {
+    "sounds": [
+      {
+        "name": "terrawrath:ice_burst",
+        "attenuation_distance": 100,
+        "stream": false
+      }
+    ],
+    "subtitle": "subtitles.terrawrath.ice"
+  },
+  "beep": {
+    "sounds": [
+      {
+        "name": "terrawrath:beep",
+        "attenuation_distance": 16,
+        "stream": false
+      }
+    ],
+    "subtitle": "subtitles.terrawrath.beep"
+  },
+  "ui_click": {
+    "sounds": [
+      {
+        "name": "terrawrath:ui_click",
+        "attenuation_distance": 16,
+        "stream": false
+      }
+    ]
+  },
+  "whoosh": {
+    "sounds": [
+      {
+        "name": "terrawrath:whoosh",
+        "attenuation_distance": 32,
+        "stream": false
+      }
+    ],
+    "subtitle": "subtitles.terrawrath.whoosh"
+  },
+  "thunder": {
+    "sounds": [
+      {
+        "name": "terrawrath:thunder_0",
+        "attenuation_distance": 260,
+        "stream": false
+      },
+      {
+        "name": "terrawrath:thunder_1",
+        "attenuation_distance": 260,
+        "stream": false
+      },
+      {
+        "name": "terrawrath:thunder_2",
+        "attenuation_distance": 260,
+        "stream": false
+      }
+    ],
+    "subtitle": "subtitles.terrawrath.thunder"
+  },
+  "impact": {
+    "sounds": [
+      {
+        "name": "terrawrath:impact_0",
+        "attenuation_distance": 240,
+        "stream": false
+      },
+      {
+        "name": "terrawrath:impact_1",
+        "attenuation_distance": 240,
+        "stream": false
+      }
+    ],
+    "subtitle": "subtitles.terrawrath.impact"
+  },
+  "crack": {
+    "sounds": [
+      {
+        "name": "terrawrath:crack_0",
+        "attenuation_distance": 90,
+        "stream": false
+      },
+      {
+        "name": "terrawrath:crack_1",
+        "attenuation_distance": 90,
+        "stream": false
+      }
+    ],
+    "subtitle": "subtitles.terrawrath.crack"
+  }
+}

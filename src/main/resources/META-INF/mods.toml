@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[66,)"
+license="MIT"
+
+[[mods]]
+modId="terrawrath"
+version="${file.jarVersion}"
+displayName="TerraWrath"
+authors="TerraWrath"
+logoFile="terrawrath_logo.png"
+description='''Blockbuster natural disasters: tornadoes, volcanoes, tsunamis, earthquakes, meteor showers, superstorms, blizzards, sinkholes and the Event Horizon.'''
+
+[[dependencies.terrawrath]]
+    modId="forge"
+    mandatory=true
+    versionRange="[66,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.terrawrath]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[26.3,26.4)"
+    ordering="NONE"
+    side="BOTH"

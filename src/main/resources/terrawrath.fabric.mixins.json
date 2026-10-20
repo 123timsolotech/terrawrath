@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.terrawrath.fabric.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "MinecraftServerMixin",
+    "CommandsMixin",
+    "PlayerListMixin"
+  ],
+  "client": [
+    "EntityRenderersAccessor",
+    "MinecraftClientMixin",
+    "ParticleResourcesMixin",
+    "CameraMixin",
+    "FogRendererMixin",
+    "HudMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
